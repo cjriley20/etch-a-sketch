@@ -9,10 +9,24 @@ body {
     padding: 20px;
 }
 
-.container {
+header {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px;
+}
+
+header button {
+    background-color: #3882f6;
+    color: #f9faf8;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+}
+
+.grid {
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
     aspect-ratio: 1 / 1;
 }
 
@@ -22,7 +36,6 @@ body {
     flex: 1;
 }
 
-.square {
-    flex-basis: 100%;
-    aspect-ratio: 1 / 1;
+.column {
+    flex: 1;
 }
