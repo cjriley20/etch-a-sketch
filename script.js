@@ -12,6 +12,13 @@ function initializeGrid(rows, cols) {
     for (let j = 0; j < cols; j++) {
       const col = document.createElement('div');
       col.classList.add('column');
+
+      col.addEventListener('mouseover', (event) => {
+        if (event.buttons == 1) {
+          event.target.style.backgroundColor = 'black';
+        }
+      })
+
       row.appendChild(col);
     }
     grid.appendChild(row);
@@ -20,7 +27,7 @@ function initializeGrid(rows, cols) {
 
 const resetButton = document.querySelector(`#reset`);
 
-resetButton.addEventListener('click', (e) => {
+resetButton.addEventListener('click', (event) => {
   const inputString = prompt('Enter number of squares per side (< 100):', '16');
 
   let rows = parseInt(inputString);
