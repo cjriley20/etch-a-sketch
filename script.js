@@ -1,8 +1,5 @@
+// Grid
 const grid = document.querySelector('div.grid');
-
-function getColor() {
-  return 'black';
-}
 
 function initializeGrid(rows, cols) {
   // Clear grid first.
@@ -29,6 +26,7 @@ function initializeGrid(rows, cols) {
   }
 }
 
+// Reset button
 const resetButton = document.querySelector(`#reset`);
 
 resetButton.addEventListener('click', (event) => {
@@ -41,4 +39,26 @@ resetButton.addEventListener('click', (event) => {
   initializeGrid(rows, rows);
 })
 
+// Color buttons
+let selectedColor = 'black';
+
+function getColor() {
+  let color = selectedColor;
+
+  if (selectedColor == 'random') {
+    color = 'green';
+  }
+
+  return color;
+}
+
+const colorButtons = document.querySelectorAll('input[name=color]');
+
+for (const colorButton of colorButtons) {
+  colorButton.addEventListener('change', (event) => {
+    selectedColor = event.target.value;
+  })
+}
+
+// Main
 initializeGrid(16, 16);
