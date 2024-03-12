@@ -1,6 +1,10 @@
-function initializeGrid(rows, cols) {
-  const grid = document.querySelector('div.grid');
+const grid = document.querySelector('div.grid');
 
+function getColor() {
+  return 'black';
+}
+
+function initializeGrid(rows, cols) {
   // Clear grid first.
   while (grid.firstChild) {
     grid.removeChild(grid.firstChild);
@@ -15,7 +19,7 @@ function initializeGrid(rows, cols) {
 
       col.addEventListener('mouseover', (event) => {
         if (event.buttons == 1) {
-          event.target.style.backgroundColor = 'black';
+          event.target.style.backgroundColor = getColor();
         }
       })
 
@@ -37,4 +41,4 @@ resetButton.addEventListener('click', (event) => {
   initializeGrid(rows, rows);
 })
 
-initializeGrid(8, 8);
+initializeGrid(16, 16);
