@@ -40,13 +40,32 @@ resetButton.addEventListener('click', (event) => {
 })
 
 // Color buttons
+const Colors = [
+  'aqua',
+  'black',
+  'blue',
+  'brown',
+  'cyan',
+  'gray',
+  'green',
+  'lawngreen',
+  'lightblue',
+  'maroon',
+  'orange',
+  'pink',
+  'purple',
+  'red',
+  'yellow'
+];
+
 let selectedColor = 'black';
 
 function getColor() {
   let color = selectedColor;
 
   if (selectedColor == 'random') {
-    color = 'green';
+    const index = Math.floor(Math.random() * Colors.length);
+    color = Colors[index];
   }
 
   return color;
